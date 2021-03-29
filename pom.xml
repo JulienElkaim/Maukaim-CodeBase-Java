@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--    These properties will be inherited from child modules-->
+    <properties>
+        <java.version>14</java.version>
+        <application.version>1.0.0-SNAPSHOT</application.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <groupId>com.maukaim.org</groupId>
+    <artifactId>Code-Base-Java</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Code Base Java</name>
+
+    <modules>
+        <module>Maukaim</module>
+        <module>Swagger-2</module>
+        <module>Swagger-2-SBC-Example</module>
+        <!-- List of future modules we will create-->
+        <!-- If module not referenced, builds with this pom will totally ignore it.-->
+    </modules>
+
+</project>
