@@ -22,7 +22,7 @@ split the function and the consumer.
 _03/30/2021_ 
 
 - [ ] Swagger Module  
-- [ ] MQ Connector  
+- [X] MQ Connector  
 - [ ] Mailing System by runtime annotation  
 - [ ] User System by runtime annotation    
 - [ ] Fix Engine  
