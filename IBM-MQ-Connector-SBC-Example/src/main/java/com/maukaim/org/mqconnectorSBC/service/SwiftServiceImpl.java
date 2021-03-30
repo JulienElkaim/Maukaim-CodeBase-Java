@@ -1,4 +1,4 @@
-package com.maukaim.org.maukaim.service;
+package com.maukaim.org.mqconnectorSBC.service;
 
 import com.maukaim.org.mqconnector.MQClientConnector;
 import com.maukaim.org.mqconnector.MQException;

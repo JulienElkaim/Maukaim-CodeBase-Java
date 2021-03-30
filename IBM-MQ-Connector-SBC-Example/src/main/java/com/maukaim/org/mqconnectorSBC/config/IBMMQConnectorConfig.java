@@ -1,4 +1,4 @@
-package com.maukaim.org.maukaim.config;
+package com.maukaim.org.mqconnectorSBC.config;
 
 import com.maukaim.org.mqconnector.MQClientConnector;
 import com.maukaim.org.mqconnector.MQClientConnectorImpl;

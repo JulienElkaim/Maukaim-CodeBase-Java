@@ -22,10 +22,10 @@
     </parent>
 
     <groupId>com.maukaim.org</groupId>
-    <artifactId>MQ-Connector</artifactId>
+    <artifactId>IBM-MQ-Connector</artifactId>
     <version>1.0.0-SNAPSHOT</version>
-    <name>MQ Connector</name>
-    <description>Module to connect to a MQ and consume messages.</description>
+    <name>IBM MQ Connector</name>
+    <description>Module to connect to a IBM MQ and consume messages.</description>
 
     <properties>
         <slf4j.version>1.7.20</slf4j.version>
