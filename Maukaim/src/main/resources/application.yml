@@ -1,3 +1,13 @@
+
+IBM-MQ:
+  enabled: true
+  config:
+    host: <host_name>
+    port: <port_number>
+    channel: <channel>
+    queue: <queue>
+    queueManager: <queue_manager>
+
 server:
   port: 10001
 
