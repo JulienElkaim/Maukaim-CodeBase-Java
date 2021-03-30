@@ -1,4 +1,4 @@
-package com.maukaim.org.maukaim.controller;
+package com.maukaim.org.mqconnectorSBC.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
