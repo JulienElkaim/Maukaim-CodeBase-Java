@@ -22,6 +22,7 @@
         <module>Swagger-2-SBC-Example</module>
         <module>IBM-MQ-Connector</module>
         <module>IBM-MQ-Connector-SBC-Example</module>
+        <module>FIX-Engine</module>
 
         <!-- List of future modules we will create-->
         <!-- If module not referenced, builds with this pom will totally ignore it.-->
