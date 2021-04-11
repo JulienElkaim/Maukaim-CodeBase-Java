@@ -1,4 +1,4 @@
-package com.maukaim.org.mqconnectorSBC;
+package com.maukaim.org.fixengineSBC;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -10,9 +10,9 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 @EnableScheduling
 @ComponentScan(basePackages = "com.maukaim.org")
 @EnableConfigurationProperties
-public class MaukaimApplication {
+public class FixEngineSBCApplication {
     public static void main(String[] args) {
-        SpringApplication.run(MaukaimApplication.class, args);
+        SpringApplication.run(FixEngineSBCApplication.class, args);
     }
 
 }

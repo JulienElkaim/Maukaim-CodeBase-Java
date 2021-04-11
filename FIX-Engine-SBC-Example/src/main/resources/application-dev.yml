@@ -1,0 +1,11 @@
+# See the specific doc of your producer to understand values
+fix-engine:
+  party-id-source: 'C'
+  party-role: 11
+  sender-comp-id: MYIDENTITYDEV
+  sender-location-id: LOCATION NAME
+  time-in-force: '0'
+  symbol: '[N/A]'
+  security-id-source: "1"
+  target-comp-id: PRODUCERIDENTITYDEV
+  conf: Maukaim/configuration/client/fixconf-local.cfg # ADD module name if multi-module project

@@ -52,7 +52,7 @@ public class FixEngineConnectorImpl implements FixEngineConnector {
                         } catch (InterruptedException e) {
                             System.out.println("ERROR::: Interrupted while connecting to proxy" + e.getMessage());
                         }
-                        System.out.println("INFO::: Session with proxy not creaed yet");
+                        System.out.println("INFO::: Session with proxy not created yet");
                     }
                 });
 
