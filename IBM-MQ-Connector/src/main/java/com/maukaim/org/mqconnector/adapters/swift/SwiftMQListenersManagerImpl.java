@@ -34,7 +34,7 @@ public class SwiftMQListenersManagerImpl implements MQListenersManager<MQSwiftMe
 
     private ConcurrentHashMap<String, Set<MT940>> mappedToBeContinuedMT940 = new ConcurrentHashMap<>();
 
-    public SwiftMQListenersManagerImpl(){
+    public SwiftMQListenersManagerImpl() {
         this.messageFactory = new ComplexSwiftMessageFactory();
     }
 
@@ -50,16 +50,16 @@ public class SwiftMQListenersManagerImpl implements MQListenersManager<MQSwiftMe
 
     @Override
     public void onException(JMSException exception) {
-        this.exceptionListeners.forEach(el->el.onException(new MQException(exception)));
+        this.exceptionListeners.forEach(el -> el.onException(new MQException(exception)));
     }
 
     @Override
     public void onMessage(Message message) {
-        try{
+        try {
             LocalDateTime receptionTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(message.getJMSTimestamp()), TimeZone.getDefault().toZoneId());
             MtSwiftMessage genericSwiftMessage = messageFactory.buildGenericSwiftMessage(message);
 
-            switch (genericSwiftMessage.getMessageTypeInt()){
+            switch (genericSwiftMessage.getMessageTypeInt()) {
                 case 940:
                     this.onMT940(genericSwiftMessage, receptionTime);
                     break;
@@ -73,32 +73,34 @@ public class SwiftMQListenersManagerImpl implements MQListenersManager<MQSwiftMe
                     throw new MQException("SwiftMessage MT type not expected ! Raw message was:\n" + genericSwiftMessage.getMessage());
             }
 
-        }catch (JMSException e){
+        } catch (JMSException e) {
             String errMessage = String.format("Error [%s] when trying to translate following message with factory:\n%s",
                     e.getMessage(), message.toString());
             this.onException(new MQException(errMessage, e.getErrorCode()));
-        }catch (Exception e){
+        } catch (Exception e) {
             String errMessage = String.format("Unexpected error [%s] during process on message:\n%s",
                     e.getMessage(), message.toString());
             this.onException(new MQException(errMessage));
         }
     }
 
-    void onMT910(MtSwiftMessage genericSwiftMessage, LocalDateTime receptionTime){
+    void onMT910(MtSwiftMessage genericSwiftMessage, LocalDateTime receptionTime) {
         MQSwiftMessageMT910 mqSwiftMessageMT910 = this.messageFactory.buildMT910(genericSwiftMessage.getMessage(), MT910.parse(genericSwiftMessage), receptionTime);
         this.spreadTheNews(mqSwiftMessageMT910);
     }
-    void onMT900(MtSwiftMessage genericSwiftMessage, LocalDateTime receptionTime){
+
+    void onMT900(MtSwiftMessage genericSwiftMessage, LocalDateTime receptionTime) {
         MQSwiftMessageMT900 mqSwiftMessageMT900 = this.messageFactory.buildMT900(genericSwiftMessage.getMessage(), MT900.parse(genericSwiftMessage), receptionTime);
         this.spreadTheNews(mqSwiftMessageMT900);
     }
-    void onMT940(MtSwiftMessage genericSwiftMessage, LocalDateTime receptionTime){
+
+    void onMT940(MtSwiftMessage genericSwiftMessage, LocalDateTime receptionTime) {
         MT940 mt940 = MT940.parse(genericSwiftMessage);
         String key = mt940.getField28C().getStatementNumber();
 
-        if(this.messageFactory.isFinalMessage(mt940.getField28C())){
+        if (this.messageFactory.isFinalMessage(mt940.getField28C())) {
             Set<MT940> mt940SetMatching = this.mappedToBeContinuedMT940.get(key);
-            if(mt940SetMatching != null && !mt940SetMatching.isEmpty()){
+            if (mt940SetMatching != null && !mt940SetMatching.isEmpty()) {
                 mt940SetMatching.stream()
                         .map(AbstractMT::getFields)
                         .flatMap(Collection::stream)
@@ -108,13 +110,13 @@ public class SwiftMQListenersManagerImpl implements MQListenersManager<MQSwiftMe
             this.mappedToBeContinuedMT940.remove(key);
             this.spreadTheNews(mqSwiftMessageMT940);
 
-        }else{
-            this.mappedToBeContinuedMT940.putIfAbsent(key, new HashSet<MT940>());
+        } else {
+            this.mappedToBeContinuedMT940.putIfAbsent(key, new HashSet<>());
             this.mappedToBeContinuedMT940.get(key).add(mt940);
         }
     }
 
-    private void spreadTheNews(MQSwiftMessage mqSwiftMessage){
+    private void spreadTheNews(MQSwiftMessage mqSwiftMessage) {
         messageListeners.forEach(ml -> ml.onMessage(mqSwiftMessage));
     }
 }

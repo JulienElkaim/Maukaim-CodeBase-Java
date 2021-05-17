@@ -1,2 +1,2 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.maukaim.org.swagger.config.SpringFoxConfig
+com.maukaim.org.swagger.MaukaimSwaggerAutoConfiguration

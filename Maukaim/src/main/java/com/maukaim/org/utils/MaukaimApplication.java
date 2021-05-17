@@ -1,4 +1,4 @@
-package com.maukaim.org.mqconnectorSBC;
+package com.maukaim.org.utils;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
