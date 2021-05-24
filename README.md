@@ -6,8 +6,7 @@ spring boot.
 
 ## How to read this repository  
 
-Despite the parent pom.xml in the root, this is not a big project.
-It is rather a collection of modules:  
+It is a collection of modules:  
 
 - **Maukaim module** - The ready-to-use module I use for current / new module 
 to add to this code base.  
