@@ -25,6 +25,17 @@ ObjectList and SerializableList should be usable in POJO, but does not work in C
 A tool to store every modifications done on an Object.
 May be not the best practice... 
 
-  
+#### Mockito  
+
+Simple example of Mock usage in test folder.
+
+
+#### Audit  
+
+Cipher method to encrypt values Sensitive but required to be translated-back to be used.  
+(Example: User's secret word to send from us to another app for a process).  
+Encrypt / Decrypt endpoints provided.  
+
+
 
 
