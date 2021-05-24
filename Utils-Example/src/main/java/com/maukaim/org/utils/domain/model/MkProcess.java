@@ -2,7 +2,6 @@ package com.maukaim.org.utils.domain.model;
 
 import com.maukaim.org.utils.audit.model.MkProcessAuditListener;
 import com.maukaim.org.utils.diffable.utils.DiffUtils;
-import com.maukaim.org.utils.serializer.converters.ObjectListJsonConverter;
 import com.maukaim.org.utils.serializer.converters.StepListJsonConverter;
 import com.maukaim.org.utils.serializer.converters.UserJsonConverter;
 import lombok.AllArgsConstructor;
