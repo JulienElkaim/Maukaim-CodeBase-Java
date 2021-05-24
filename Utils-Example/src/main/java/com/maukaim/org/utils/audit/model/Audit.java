@@ -2,6 +2,7 @@ package com.maukaim.org.utils.audit.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 
 @NoArgsConstructor
 @MappedSuperclass
+@SuperBuilder
 @Getter
 abstract class Audit {
     @Id
