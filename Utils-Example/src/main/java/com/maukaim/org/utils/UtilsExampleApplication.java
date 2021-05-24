@@ -1,4 +1,4 @@
-package com.maukaim.org.fixengineSBC;
+package com.maukaim.org.utils;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,11 +8,11 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-@ComponentScan(basePackages = "com.maukaim.org.fixengineSBC")
+@ComponentScan(basePackages = "com.maukaim.org")
 @EnableConfigurationProperties
-public class FixEngineSBCApplication {
+public class UtilsExampleApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FixEngineSBCApplication.class, args);
+        SpringApplication.run(UtilsExampleApplication.class, args);
     }
 
 }

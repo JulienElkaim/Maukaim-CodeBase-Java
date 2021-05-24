@@ -10,11 +10,11 @@
     </parent>
 
     <groupId>com.maukaim.org</groupId>
-    <artifactId>Maukaim</artifactId>
+    <artifactId>Utils-Example</artifactId>
 
-    <name>Maukaim</name>
+    <name>Utils-Example</name>
 
-    <description>Module used to conduct testing before creating modules</description>
+    <description>Module to provide and demonstrate utils to copy/paste in real projects.</description>
 
     <properties>
         <!--		Here properties specific to this module -->
@@ -51,7 +51,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
