@@ -20,15 +20,18 @@ split the function and the consumer.
 
 _03/30/2021_ 
 
-- [ ] Swagger Module  
+- [X] Swagger Module  
 - [X] MQ Connector  
 - [ ] Mailing System by runtime annotation  
 - [ ] User System for public app (Simple auth and Oauth2) 
 - [X] Fix Engine  
 - [ ] Pattern with AuditTrail  
 - [ ] File Downloader / Uploader  
-- [ ] Mockito example  
-- [ ] Oauth2 example
+- [X] Mockito example  
+- [X] Oauth2 example
+- [X] Diffable util
+- [X] Audit util
+- [X] Serializer util
 - [ ] ...  
 
  
