@@ -28,7 +28,7 @@ public class MQClientConnectorImpl<T> implements MQClientConnector<T>, MQExcepti
     }
 
     //If you want to specify the disconnecting behavior onException, default is false.
-    public MQClientConnectorImpl(@NonNull MQConnectionParameters parameters, @NonNull GenericMessageFactory<T> factory, @NonNull boolean autoDisconnectOnException) {
+    public MQClientConnectorImpl(@NonNull MQConnectionParameters parameters, @NonNull GenericMessageFactory<T> factory, @NonNull Boolean autoDisconnectOnException) {
         this(parameters, new DefaultMQListenersManagerImpl<>(factory), autoDisconnectOnException);
     }
 
@@ -38,7 +38,7 @@ public class MQClientConnectorImpl<T> implements MQClientConnector<T>, MQExcepti
     }
 
     // The final constructor, all are converging to this one.
-    public MQClientConnectorImpl(@NonNull MQConnectionParameters parameters, @NonNull MQListenersManager<T> listenersManager, @NonNull boolean autoDisconnectOnException) {
+    public MQClientConnectorImpl(@NonNull MQConnectionParameters parameters, @NonNull MQListenersManager<T> listenersManager, @NonNull Boolean autoDisconnectOnException) {
         this.mqConnectionParameters = parameters;
         this.mqListenersManager = listenersManager;
         this.mqListenersManager.addExceptionListener(this);

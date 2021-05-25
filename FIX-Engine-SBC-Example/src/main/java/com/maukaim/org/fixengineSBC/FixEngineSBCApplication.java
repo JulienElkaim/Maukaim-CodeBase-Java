@@ -8,7 +8,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-@ComponentScan(basePackages = "com.maukaim.org")
+@ComponentScan(basePackages = "com.maukaim.org.fixengineSBC")
 @EnableConfigurationProperties
 public class FixEngineSBCApplication {
     public static void main(String[] args) {

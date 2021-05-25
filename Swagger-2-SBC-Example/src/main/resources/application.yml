@@ -1,4 +1,9 @@
 server:
   port: 10002
 
+maukaim:
+  swagger:
+    enabled: true
+
+
 

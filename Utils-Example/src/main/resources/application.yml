@@ -1,0 +1,23 @@
+server:
+  port: 10005
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+
+oauth2:
+  credentials:
+    example-api:
+      client-id: 1234bbed234-1234-1234  # Client ID, public part of your identity
+      client-secret: 1m12345-124456-225555 # Client Secret, private part of your identity. Should go in a vault
+      access-token-uri: https://domain.com/token/provider/path
+      scopes:
+        - api.app-name.v1
+        - openid
+        - blablabla
