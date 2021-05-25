@@ -1,0 +1,24 @@
+
+# Possible way to set up a vault cloud dependency. All secret settled in vault will be added in application-profile.yml files !
+# How to handle profiles?
+# Under the path  of vault.generic.default-context create a path for each profile (prd, dev, test, uat, ...)
+# Vault will get secrets in the path relative to the spring profile.
+
+# This configuration only works with a spring-cloud-starter-vault-config dependency. (See commented in pom.xml
+
+#spring:
+#  application:
+#    name: appName
+#  cloud:
+#    vault:
+#      enabled: true
+#      uri: https://vault.cloud.company/v1/  #Potential uri if company has its own version of vault cloud
+#      authentication: APPROLE
+#      app-role:
+#        role-id: id12345-de-oUF56789
+#        secret-id: ${PATH_VARIABLE_VAULT_PASSWORD} # The only secret to get on your side, to input all the others
+#      namespace: myVault/TEAM_NAME # If namespace required in authentication
+#      generic:
+#        enabled: true
+#        backend: aName
+#        default-context: appNameInTheVaultInstance # Not necessary to be same as spring.application.name
